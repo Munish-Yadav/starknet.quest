@@ -3,13 +3,14 @@ import type { Metadata, Viewport } from "next";
 import { Providers } from "./provider";
 import "@styles/globals.css";
 import Navbar from "@components/UI/navbar";
-import Footer from "@components/UI/footer";
 
 export const metadata: Metadata = {
   title: "Starknet Quest",
   description:
     "Starknet Quest helps protocols attract and retain users by creating gamified quest experiences on Starknet.",
-  metadataBase: process.env.NEXT_PUBLIC_APP_LINK ? new URL(process.env.NEXT_PUBLIC_APP_LINK) : undefined,
+  metadataBase: process.env.NEXT_PUBLIC_APP_LINK
+    ? new URL(process.env.NEXT_PUBLIC_APP_LINK)
+    : undefined,
   openGraph: {
     title: "Starknet Quest - Accomplish quests to get unique NFTs.",
     description:
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/visuals/starknetquest.webp",
-        width: 680, 
+        width: 680,
         height: 680,
       },
     ],
@@ -54,10 +55,7 @@ export default function RootLayout({
       <body className="default_background_color">
         <Providers>
           <Navbar />
-          <main className="mt-[48px]">
-            {children}
-          </main>
-          <Footer />
+          <main className="mt-[48px]">{children}</main>
         </Providers>
       </body>
     </html>
